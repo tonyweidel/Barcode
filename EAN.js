@@ -10,7 +10,31 @@ const EAN = function(){
 
     function makeSysCode(){
         //create this function
-
+        let r = discreetRangeIn(1,8);
+        if (r = 1){
+            return "616";//Kenya
+        }
+        else if (r = 2){
+            return "628";//Saudi Arabia
+        }
+        else if (r = 3){
+            return "890";//India
+        }
+        else if (r = 4){
+            return "003";//USA
+        }
+        else if (r = 5){
+            return "621"//Syria
+        }
+        else if (r = 6){
+            return "073";//Sweden
+        }
+        else if (r = 7){
+            return "046";//Russian Federation
+        }
+        else if (r = 8){
+            return "729";//Israel
+        }
     }
 
     function check(){
