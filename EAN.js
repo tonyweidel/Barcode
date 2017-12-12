@@ -10,7 +10,7 @@ const EAN = function(){
 
     function makeSysCode(){
         //create this function
-        let r = discreetRangeIn(1,8);
+        let r = Random().discreteRangeIn(1,8);
         if (r = 1){
             return "616";//Kenya
         }
