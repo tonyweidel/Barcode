@@ -2,9 +2,9 @@ const Random = require('./Random.js');
 
 const EAN = function(){
 
-    let sysCode;//3 digits
-    let manCode;//5 digits
-    let proCode;//4 digits
+    let sysCode = makeSysCode();//3 digits
+    let manCode = makeManCode();//5 digits
+    let proCode = makeProCode();//4 digits
     let checkDigit = check();
 
 
@@ -35,6 +35,13 @@ const EAN = function(){
         else if (r = 8){
             return "729";//Israel
         }
+    }
+
+    function makeManCode(){
+      return String(Random().digit(5));
+    }
+    function makeProCode(){
+      return String(Random().digit(4));
     }
 
     function check(){
