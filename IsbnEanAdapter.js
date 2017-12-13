@@ -4,6 +4,7 @@ const EAN = require("./EAN.js");
 function IsbnEanAdapter(isbnOBJ){
     //create function here
     let code = isbnOBJ.read();//our old ISBN
+    let checkDigit = check();
     code = "978"+code;//bookland
     code = code.substring(0,12)
     function check(){
@@ -22,7 +23,6 @@ function IsbnEanAdapter(isbnOBJ){
         }
         return 10-remainder;
     }
-    let checkDigit = check();
     function read(){
         return code+"-"+checkDigit;
     }
