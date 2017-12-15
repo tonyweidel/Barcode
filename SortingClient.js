@@ -6,9 +6,17 @@ const Sort = require('./sort.js');
 
 let bf =new BookFactory()
 let list = []
-for(let x=0;x<10;x++){
+for(let x=0;x<1000;x++){
   let year = Random().discreteRangeIn(1900,2017);
-  list[x]=bf.create(year);
+  if(x < 2007){
+      list.unshift(new IsbnEanAdapter(bf.createBook(x)));
+  }
+  else{
+      list.unshift(bf.createBook(x));
+  }
 }
-let isbns = [Number(EAN.sysCode)];
-let sorted = Sort.insetion(list);
+let isbns = [];
+for(let b = 0; b < list.length; b++){
+  isbns.unshift(Number(list[b].code));
+}
+Sort.insertion(isbns);

@@ -21,4 +21,4 @@ function test(){
   console.log(b1.read());
 }
 test();
-//module.exports = BookFactory;
+module.exports = BookFactory;

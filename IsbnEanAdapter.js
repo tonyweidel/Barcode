@@ -28,3 +28,13 @@ function IsbnEanAdapter(isbnOBJ){
     }
     return {code, checkDigit, read};
 }
+
+function test(){
+    let i = new ISBN();
+    let e = new IsbnEanAdapter(i);
+    console.log(e.code);
+    console.log(e.checkDigit);
+    console.log(e.read());
+}
+
+module.exports = IsbnEanAdapter

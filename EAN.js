@@ -74,6 +74,7 @@ const EAN = function(){
 function test(){
     let e = new EAN();
     console.log(e.checkDigit);
+    console.log(e.read());
 
 }
 //test();
